@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -depth -type f -name "*.gif" -printf %f'\n'
+find . -depth -type f -name "*.gif" -printf %f'\n'| cut -c 5- 
