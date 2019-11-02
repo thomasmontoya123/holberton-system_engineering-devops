@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Fizz Buzz
-for ((i=1; i<100; i++))
+for ((i=1; i<=100; i++))
 do
     if [[ $((i % 5)) == 0 && $((i % 3)) == 0 ]]
     then 
