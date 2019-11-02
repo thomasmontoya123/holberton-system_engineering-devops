@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script that gives you information about the holbertonschool
-FILE="holbertonschool"
+FILE=holbertonschool
 if test -e "$FILE"
 then
     echo "$FILE file exists"
@@ -12,7 +12,7 @@ then
     fi
     if test -f "$FILE"
     then
-        echo "$FILE file is a regular file"
+        echo "$FILE is a regular file"
     fi
 else
     echo "$FILE file does not exist"
