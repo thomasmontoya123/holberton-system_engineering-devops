@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# remove password auth
+PasswordAuthentication no
+IdentityFile ~/.ssh/holberton
