@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Redirect
+# Redirection
 new_line="location /redirect_me {\\n return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\\n}\\n"
 apt-get -y update
 apt-get -y install nginx
