@@ -2,5 +2,5 @@
 # Installs nginx
 apt-get update
 apt-get -y install nginx
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-service nginx restart
+echo "Holberton School" | tee /var/www/html/index.html
+service nginx start
