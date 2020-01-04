@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # add a custom Nginx response header
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+apt-get -y install nginx
 new_line="add_header X-Served-By $HOSTNAME;"
-sudo sed -i "20i new_line" /etc/nginx/nginx.conf
-sudo service nginx restart
+sed -i "/sendfile on;/a $new_line" /etc/nginx/nginx.conf
+service nginx restart
