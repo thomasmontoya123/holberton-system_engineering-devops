@@ -6,7 +6,6 @@ function digger_full_domain () {
     dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain lb-01 is a " $4 " record and points to " $5}'
     dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain web-01 is a " $4 " record and points to " $5}'
     dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print "The subdomain web-02 is a " $4 " record and points to " $5}'
-
 }
 
 function digger_sub_domain () {
@@ -20,6 +19,4 @@ if [ "$#" -eq 1 ]; then
 elif [ "$#" -eq 2 ]; then
      digger_sub_domain "$1" "$2"
 
-else
-     echo "Wrong usage"
 fi
