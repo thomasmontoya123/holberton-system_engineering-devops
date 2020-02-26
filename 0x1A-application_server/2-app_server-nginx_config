@@ -1,0 +1,38 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+
+        #add_header X-Served-By "$HOSTNAME";
+        #rewrite ^/redirect_me http://www.holbertonschool.com permanent;
+        #error_page 404 /custom_404.html;
+        root /var/www/html/;
+        server_name 127.0.0.1 35.190.151.31;
+
+
+        location ~ ^/airbnb-dynamic/number_odd_or_even/([0-9]*) {
+                #include proxy_params;
+                proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+        }
+
+        location /airbnb-onepage {
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage;
+        }
+        location ~ ^/airbnb-dynamic/number_odd_or_even/([0-9]*) {
+                #include proxy_params;
+		proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+        }
+        location /api/ {
+                proxy_pass http://0.0.0.0:5002;
+        }
+        location /hbnb_static {
+                alias /data/web_static/current/;
+                autoindex off;
+        }
+        location /static {
+                # First attempt to serve request as file, then
+        }
+        location / {
+                proxy_pass http://0.0.0.0:5003/2-hbnb/;
+        }
+}
