@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Reloads gunicorn gracefully (kill -HUP <pid>)
+pkill -HUP gunicorn
